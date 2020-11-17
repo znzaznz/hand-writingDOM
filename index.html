@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,usr-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+    <main>
+        <div class="test"></div>
+    </main>
+    <div id="test">
+        <div class="red"></div><div class="red"></div><div class="red"></div>
+    </div>
+    <footer>
+        hello
+    </footer>
+
+    <div class="test1" style="color: red" title="test1">caonima</div>
+    <div class="test2">
+        <div>我是大毛，你好啊</div>
+    </div>
+    <div class="test3" style="width: 100px">hello</div>
+    <script src="dom.js"></script>
+    <script>
+        let test3 = dom.find(".test3");
+        console.log(dom.style(test3, "color"));
+    </script>
+
+</body>
+</html>

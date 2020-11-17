@@ -8,25 +8,12 @@
     <title>Title</title>
 </head>
 <body>
-    <main>
-        <div class="test"></div>
-    </main>
-    <div id="test">
-        <div class="red"></div><div class="red"></div><div class="red"></div>
-    </div>
-    <footer>
-        hello
-    </footer>
-
-    <div class="test1" style="color: red" title="test1">caonima</div>
-    <div class="test2">
-        <div>我是大毛，你好啊</div>
-    </div>
     <div class="test3" style="width: 100px">hello</div>
     <script src="dom.js"></script>
     <script>
         let test3 = dom.find(".test3");
-        console.log(dom.style(test3, "color"));
+        // dom.style(test3,"color","red");成功
+        dom.style(test3,{color:'red'}) //失败
     </script>
 
 </body>

@@ -77,42 +77,23 @@ window.dom = {
         }
     },
     // 修改style
-    // style(node,name,value){
-    //     console.log(4)
-    //     if (arguments.length === 3){
-    //         node.style[name] = value;
-    //         console.log(2);
-    //     }else if (arguments.length === 2){
-    //         console.log(3);
-    //         if (typeof name === "string"){
-    //             return  node.style[name]
-    //         }else if (name instanceof Object){
-    //             for (let key in value){
-    //                 console.log(key);
-    //                 node.style[key] = value[key];
-    //             }
-    //         }
-    //     }else{
-    //         console.log(1)
-    //     }
-    // }
-    style(node, name, value){
-        console.log(2);
-        if(arguments.length===3){
-            console.log(1)
-            // dom.style(div, 'color', 'red')
-            node.style[name] = value
-        }else if(arguments.length===2){
-            if(typeof name === 'string'){
-                // dom.style(div, 'color')
-                return node.style[name]
-            }else if(name instanceof Object){
-                // dom.style(div, {color: 'red'})
-                const object = name
-                for(let key in object){
-                    node.style[key] = object[key]
+    style(node,name,value){
+        console.log(4)
+        if (arguments.length === 3){
+            node.style[name] = value;
+            console.log(2);
+        }else if (arguments.length === 2){
+            console.log(3);
+            if (typeof name === "string"){
+                return  node.style[name]
+            }else if (name instanceof Object){
+                for (let key in value){
+                    console.log(key);
+                    node.style[key] = value[key];
                 }
             }
+        }else{
+            console.log(1)
         }
     },
     class:{

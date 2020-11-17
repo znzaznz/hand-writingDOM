@@ -8,12 +8,29 @@
     <title>Title</title>
 </head>
 <body>
-    <div class="test3" style="width: 100px">hello</div>
+    <div class="test3 world" style="width: 100px">hello</div>
+    <div class="demo">
+        <div class="div1"></div><div class="div2"></div><div class="div3"></div><div class="div4"></div><div class="div5"></div><div class="div6"></div>
+    </div>
     <script src="dom.js"></script>
     <script>
         let test3 = dom.find(".test3");
-        // dom.style(test3,"color","red");成功
-        dom.style(test3,{color:'red'}) //失败
+        // dom.style(test3,"color","red");//成功
+        // dom.style(test3,{color:'red'}) //失败
+        // dom.class.remove(test3,"world")
+        // dom.class.add(test3,"hello")
+        // let click = ()=>{
+        //     console.log(1);
+        // }
+        // dom.on(test3,"click",click)
+        // dom.off(test3,"click",click)
+        // console.log(dom.parent(test3));
+        // console.log(dom.children(test3));
+        // dom.find(".demo")
+        // console.log(dom.siblings(dom.find(".div1")));
+
+        let div = dom.find(".div5");
+        console.log(dom.index(div));
     </script>
 
 </body>

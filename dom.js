@@ -78,22 +78,17 @@ window.dom = {
     },
     // 修改style
     style(node,name,value){
-        console.log(4)
         if (arguments.length === 3){
             node.style[name] = value;
-            console.log(2);
         }else if (arguments.length === 2){
-            console.log(3);
             if (typeof name === "string"){
                 return  node.style[name]
             }else if (name instanceof Object){
-                for (let key in value){
+                for (let key in name){
                     console.log(key);
-                    node.style[key] = value[key];
+                    node.style[key] = name[key];
                 }
             }
-        }else{
-            console.log(1)
         }
     },
     class:{
@@ -105,6 +100,50 @@ window.dom = {
         }
     },
     on(node,event,fn){
-
+        node.addEventListener(event,fn)
+    },
+    off(node,event,fn){
+        node.removeEventListener(event,fn)
+    },
+    parent(node){
+        return node.parentNode;
+    },
+    children(node){
+        return node.children;
+    },
+    siblings(node){
+        let children =  dom.parent(node).children;
+        return  Array.from(children).filter((value)=>{
+            return value !== node
+        })
+    },
+    next(node){
+        let nextNode = node.nextSibling;
+        while (nextNode && nextNode.nodeType !== 1){
+            nextNode = nextNode.nextSibling;
+        }
+        return nextNode
+    },
+    previous(node){
+        let previousNode = node.previousSibling;
+        while (previousNode && previousNode.nodeType !== 1){
+            previousNode = previousNode.previousSibling;
+        }
+        return previousNode
+    },
+    each(node,fn){
+        for (let i = 0; i < node.length; i++) {
+            fn.call(null,node[i]);
+        }
+    },
+    index(node){
+       let children = Array.from(dom.children(dom.parent(node)));
+       let num = 0;
+        for (let i = 0; i < children.length; i++) {
+            if (children[i] === node){
+                num = i;
+            }
+        }
+        return num+1
     }
 }
